@@ -64,8 +64,7 @@ class ResultsPage extends StatelessWidget {
           BottomButton(
             label: 'RE-CALCULTE',
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => InputPage()));
+              Navigator.pop(context);
             },
           ),
         ],
