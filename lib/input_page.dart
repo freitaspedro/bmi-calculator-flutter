@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'constants.dart';
 import 'icon_content.dart';
+import 'minus_plus_content.dart';
 
 enum Gender {
   male,
@@ -18,6 +19,8 @@ class _InputPageState extends State<InputPage> {
 
   Gender selectedGender;
   int height = 180;
+  int weight = 60;
+  int age = 18;
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +86,9 @@ class _InputPageState extends State<InputPage> {
                         height.toString(),
                         style: kNumberTextStyle,
                       ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text(
                         'cm',
                         style: kLabelTextStyle,
@@ -122,12 +128,40 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       color: kActiveCardColor,
-                    )
+                      cardChild: MinusPlusContent(
+                        label: 'WEIGHT',
+                        value: weight,
+                        onMinusPressed: () {
+                          setState(() {
+                            weight--;
+                          });
+                        },
+                        onPlusPressed: () {
+                          setState(() {
+                            weight++;
+                          });
+                        },
+                      ),
+                    ),
                   ),
                   Expanded(
-                    child: ReusableCard(
-                      color: kActiveCardColor,
-                    )
+                      child: ReusableCard(
+                        color: kActiveCardColor,
+                        cardChild: MinusPlusContent(
+                          label: 'AGE',
+                          value: age,
+                          onMinusPressed: () {
+                            setState(() {
+                              age--;
+                            });
+                          },
+                          onPlusPressed: () {
+                            setState(() {
+                              age++;
+                            });
+                          },
+                        ),
+                      ),
                   ),
                 ],
               )
