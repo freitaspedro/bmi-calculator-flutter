@@ -4,12 +4,18 @@ import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:bmi_calculator/screens/input_page.dart';
 
-class ResultsPage extends StatefulWidget {
-  @override
-  State<ResultsPage> createState() => _ResultsPageState();
-}
+class ResultsPage extends StatelessWidget {
 
-class _ResultsPageState extends State<ResultsPage> {
+  final String bmi;
+  final String result;
+  final String interpretation;
+
+  ResultsPage({
+    @required this.bmi,
+    @required this.result,
+    @required this.interpretation
+  });
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,15 +45,15 @@ class _ResultsPageState extends State<ResultsPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'OVERWEIGHT',
+                    result.toUpperCase(),
                     style: kResultTextStyle,
                   ),
                   Text(
-                    '26.7',
+                    bmi,
                     style: kBMITextStyle,
                   ),
                   Text(
-                    'You have a higher than normal body weight. Try to exercise more.',
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   )

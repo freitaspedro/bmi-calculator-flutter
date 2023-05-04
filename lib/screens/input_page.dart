@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/calculator_brain.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi_calculator/constants.dart';
@@ -171,8 +172,13 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             label: 'CALCULTE',
             onTap: () {
+              CalculatorBrain brain = CalculatorBrain(height: height, weight: weight);
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultsPage()));
+                  MaterialPageRoute(builder: (context) => ResultsPage(
+                    bmi: brain.caculateBMI(),
+                    result: brain.getResult(),
+                    interpretation: brain.getInterpretation(),
+                  )));
             },
           ),
         ],
