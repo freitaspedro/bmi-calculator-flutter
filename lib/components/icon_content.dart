@@ -1,5 +1,5 @@
-import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:bmi_calculator/constants.dart';
 
 class IconContent extends StatelessWidget {
 

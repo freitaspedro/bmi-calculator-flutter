@@ -1,8 +1,7 @@
-import 'package:bmi_calculator/round_icon_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'constants.dart';
+import 'package:bmi_calculator/components/round_icon_button.dart';
+import 'package:bmi_calculator/constants.dart';
 
 class MinusPlusContent extends StatelessWidget {
 
